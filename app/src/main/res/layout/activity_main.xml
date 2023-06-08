@@ -1,18 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
+    <EditText
+        android:id="@+id/edtKeterangan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Keterangan"
+        android:layout_margin="8dp"/>
+
+    <EditText
+        android:id="@+id/edtNominal"
+        android:layout_below="@id/edtKeterangan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nominal"
+        android:inputType="numberDecimal"
+        android:layout_margin="8dp"/>
+
+    <Button
+        android:id="@+id/btnTambah"
+        android:layout_below="@id/edtNominal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Tambah"
+        android:layout_margin="8dp"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <EditText
+        android:id="@+id/edtId"
+        android:layout_below="@id/btnTambah"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="ID (Untuk Edit/Hapus)"
+        android:inputType="number"
+        android:layout_margin="8dp"/>
+
+    <Button
+        android:id="@+id/btnEdit"
+        android:layout_below="@id/edtId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit"
+        android:layout_margin="8dp"/>
+
+    <Button
+        android:id="@+id/btnHapus"
+        android:layout_below="@id/edtId"
+        android:layout_toRightOf="@id/btnEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hapus"
+        android:layout_margin="8dp"/>
+
+    <EditText
+        android:id="@+id/edtCari"
+        android:layout_below="@id/btnEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Cari (Berdasarkan Keterangan)"
+        android:layout_margin="8dp"/>
+
+    <Button
+        android:id="@+id/btnCari"
+        android:layout_below="@id/edtCari"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cari"
+        android:layout_margin="8dp"/>
+
+    <TextView
+        android:id="@+id/tvTotalPengeluaran"
+        android:layout_below="@id/btnCari"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"/>
+
+    <ListView
+        android:id="@+id/lvPengeluaran"
+        android:layout_below="@id/tvTotalPengeluaran"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"/>
+
+</RelativeLayout>
